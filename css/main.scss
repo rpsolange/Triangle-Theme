@@ -80,17 +80,25 @@ body {
             display: block;
             &:hover, &:focus {
                 color: $orange;
+                @media(max-width:768px){
+                	background-color: $gray-light;
+                }
             }
         }
     }
-    .navbar-inverse .navbar-nav li.active > a {
+    .navbar-brand{
+    	img{
+    		margin-top: -10%;
+    	}
+    }
+    .navbar-nav li.active > a {
         background-color: inherit;
         border: 0;
-        color: $orange;
-        &:focus {
-            background-color: inherit;
-            border: 0;
-            color: $orange;
+       	color: $orange;
+       	&:focus {
+           	background-color: inherit;
+           	border: 0;
+           	color: $orange;
         }
     }
 }
@@ -252,37 +260,46 @@ footer{
             font-weight: bolder;
             h3{
                 font-size: 1.5em;
+                border-left: 0;
             }
             blockquote {
-                border-left: 0;
                 padding: 0;
-                i{
-                    color: $border-btn;
-                    &:first-child{
-                        margin-right: 15px;
-                    }
-                    &:last-child{
-                        margin-left: 10px;
-                    }
+                border-left: 0;
+                &:before{
+                	content: '"';
+                	font-size: 2em;
+                	color: $orange;
+                	margin-right: 5px;
+                	position: relative;
+                	top: 12px;
+                }
+                &:after{
+                	content: '"';
+                	font-size: 2em;
+                	color: $orange;
+                	margin-left: 5px;
+                	position: relative;
+                	top: 15px;
                 }
             }
+        }
         a{
             color: $orange;
+            font-size: 1em;
             &:hover{
                 text-decoration: none;
             }
-        }
-    }
+        }  
     }
     .contact-info{
-        a{
-            color: #a5732a;
-            &:hover {
-                text-decoration: none;
-                color: #dab074;
-            }
-        }
-    }
+	    a{
+	        color: $border-btn;
+	        &:hover {
+	            text-decoration: none;
+	            color: $orange;
+	        }
+	    }
+	}
     .contact-form{
         input{
             border: 1px solid $border-btn;
